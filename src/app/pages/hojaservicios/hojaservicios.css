@@ -1,0 +1,463 @@
+* {
+  box-sizing: border-box;
+}
+
+
+/* CONTENEDOR */
+
+.hoja-container {
+  width: 100%;
+  padding: 30px;
+}
+
+
+/* ============================= */
+/* ENCABEZADO */
+/* ============================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.page-title h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.page-title p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+
+/* ============================= */
+/* BOTÓN NUEVO */
+/* ============================= */
+
+.btn-nuevo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.btn-nuevo:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.plus {
+  font-size: 20px;
+  line-height: 1;
+}
+
+
+/* ============================= */
+/* TARJETA */
+/* ============================= */
+
+.table-card {
+  width: 100%;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.05);
+
+  overflow: hidden;
+}
+
+
+/* ============================= */
+/* HEADER TABLA */
+/* ============================= */
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table-header h2 {
+  margin: 0;
+
+  font-size: 19px;
+  font-weight: 650;
+
+  color: #1e293b;
+}
+
+.table-header p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #64748b;
+}
+
+
+/* TOTAL */
+
+.total-registros {
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* ============================= */
+/* CONTENEDOR TABLA */
+/* ============================= */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+/* ============================= */
+/* TABLA */
+/* ============================= */
+
+.tabla-servicios {
+  width: 100%;
+  min-width: 900px;
+
+  border-collapse: collapse;
+}
+
+
+/* CABECERA */
+
+.tabla-servicios thead {
+  background: #f8fafc;
+}
+
+.tabla-servicios th {
+  padding: 14px 18px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+
+/* CELDAS */
+
+.tabla-servicios td {
+  padding: 14px 18px;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+
+/* HOVER FILA */
+
+.tabla-servicios tbody tr {
+  transition: background 0.15s ease;
+}
+
+.tabla-servicios tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+/* ============================= */
+/* ID */
+/* ============================= */
+
+.id-columna {
+  color: #64748b !important;
+  font-weight: 600;
+}
+
+
+/* ============================= */
+/* CLIENTE */
+/* ============================= */
+
+.cliente-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dbeafe;
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nombre-columna {
+  font-weight: 600;
+  color: #1e293b !important;
+}
+
+
+/* ============================= */
+/* PASSWORD */
+/* ============================= */
+
+.password {
+  color: #94a3b8;
+
+  letter-spacing: 2px;
+}
+
+
+/* ============================= */
+/* ESTADO */
+/* ============================= */
+
+.estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.estado-punto {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+
+/* PROCESO */
+
+.proceso {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+
+/* ESPERA */
+
+.espera {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+
+/* FINALIZADO */
+
+.finalizado {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+
+/* ============================= */
+/* ACCIONES */
+/* ============================= */
+
+.th-acciones {
+  text-align: center !important;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+
+/* BOTONES */
+
+.btn-accion {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: all 0.15s ease;
+}
+
+
+/* EDITAR */
+
+.btn-editar {
+  background: #eff6ff;
+}
+
+.btn-editar:hover {
+  background: #dbeafe;
+  transform: translateY(-1px);
+}
+
+
+/* ELIMINAR */
+
+.btn-eliminar {
+  background: #fef2f2;
+}
+
+.btn-eliminar:hover {
+  background: #fee2e2;
+  transform: translateY(-1px);
+}
+
+
+/* PDF */
+
+.btn-pdf-row {
+  background: #f1f5f9;
+}
+
+.btn-pdf-row:hover {
+  background: #dbeafe;
+  transform: translateY(-1px);
+}
+
+
+/* PDF SELECCIONADO */
+
+.btn-pdf-row.seleccionado {
+  background: #2563eb;
+  color: white;
+
+  box-shadow:
+    0 0 0 3px #dbeafe;
+}
+
+
+/* ============================= */
+/* SIN DATOS */
+/* ============================= */
+
+.sin-datos {
+  padding: 60px 20px !important;
+
+  text-align: center !important;
+
+  color: #94a3b8 !important;
+}
+
+.sin-datos-icon {
+  margin-bottom: 10px;
+
+  font-size: 32px;
+}
+
+.sin-datos strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #475569;
+}
+
+.sin-datos p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+  .hoja-container {
+    padding: 20px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .btn-nuevo {
+    width: 100%;
+  }
+
+  .table-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+}

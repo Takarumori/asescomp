@@ -1,0 +1,47 @@
+<div class="alerta-container">
+
+  <div class="icono-alerta">
+    <mat-icon>warning_amber</mat-icon>
+  </div>
+
+  <h2 mat-dialog-title>
+    Formulario incompleto
+  </h2>
+
+  <mat-dialog-content>
+
+    <p class="mensaje">
+      Debes completar los siguientes campos antes de continuar:
+    </p>
+
+    <div class="campos-container">
+
+      @for (campo of data.campos; track campo) {
+
+        <div class="campo-faltante">
+          <mat-icon>error_outline</mat-icon>
+          <span>{{ campo }}</span>
+        </div>
+
+      }
+
+    </div>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+
+    <button
+      mat-raised-button
+      class="btn-aceptar"
+      (click)="cerrar()">
+
+      <mat-icon>check</mat-icon>
+
+      Aceptar
+
+    </button>
+
+  </mat-dialog-actions>
+
+</div>

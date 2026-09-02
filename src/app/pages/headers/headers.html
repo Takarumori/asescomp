@@ -1,0 +1,72 @@
+<div class="dashboard">
+
+  <!-- MENÚ LATERAL -->
+  <aside class="sidebar"  [class.collapsed]="!menuAbierto">
+
+    <button class="logo-button" (click)="toggleMenu()">
+
+      <div class="logo-icon">
+        A
+      </div>
+
+      <div class="logo-text">
+        <h2>Asescomp</h2>
+      </div>
+
+      <span class="arrow">
+
+      </span>
+
+    </button>
+
+<nav class="menu">
+
+  <!-- HOME -->
+  <a
+    routerLink="/dasboard"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="menu-item">
+
+    <span class="icon">🏠</span>
+    <span class="menu-text">Home</span>
+
+  </a>
+
+
+  <!-- HOJA DE SERVICIOS -->
+  <a
+    routerLink="/hojaservicios"
+    routerLinkActive="active"
+    class="menu-item">
+
+    <span class="icon">👥</span>
+    <span class="menu-text">Hoja de Servicios</span>
+
+  </a>
+
+</nav>
+
+    <div class="sidebar-bottom">
+
+      <button class="logout" (click)="cerrarSesion()">
+        <span>🚪</span>
+        <span class="menu-text">Cerrar sesión</span>
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main">
+
+    <!-- HEADER -->
+
+ <router-outlet></router-outlet>
+
+
+  </main>
+
+</div>

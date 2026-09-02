@@ -1,0 +1,386 @@
+<div class="dialog-container">
+
+  <!-- ENCABEZADO -->
+  <div class="dialog-header">
+
+    <div class="header-icon">
+      <mat-icon>build</mat-icon>
+    </div>
+
+    <div>
+      <h2 mat-dialog-title>
+        {{ modoEdicion ? 'Modificar servicio' : 'Nuevo servicio' }}
+      </h2>
+
+      <p>
+        {{ modoEdicion
+        ? 'Modifica la información del cliente y del equipo'
+        : 'Registra la información del cliente y del equipo'
+        }}
+      </p>
+    </div>
+
+    <button mat-icon-button class="close-button" (click)="cancelar()">
+
+      <mat-icon>close</mat-icon>
+
+    </button>
+
+  </div>
+
+  <!-- DATOS DEL SERVICIO -->
+  <div class="datos-servicio">
+
+    <div class="dato">
+
+      <span class="dato-label">
+        FOLIO
+      </span>
+
+      <span class="dato-valor">
+        {{ servicio.folio | number:'3.0-0' }}
+      </span>
+
+    </div>
+
+
+    <!-- FECHA -->
+    <div class="dato">
+
+      <span class="dato-label">
+        FECHA
+      </span>
+
+      <span class="dato-valor">
+        {{ fecha }}
+      </span>
+
+    </div>
+
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="dialog-content">
+
+    <!-- DATOS DE CLIENTE -->
+    <div class="section">
+
+      <div class="section-title">
+        <mat-icon>person</mat-icon>
+        <span>DATOS DEL CLIENTE</span>
+      </div>
+
+      <div class="form-grid">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre completo</mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+
+          <input matInput [(ngModel)]="servicio.nombre" placeholder="Ej. Juan Pérez">
+
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Teléfono</mat-label>
+          <mat-icon matPrefix>phone</mat-icon>
+
+          <input matInput type="tel" [(ngModel)]="servicio.telefono" placeholder="Ej. 961 123 4567">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Correo</mat-label>
+          <mat-icon matPrefix>email</mat-icon>
+
+          <input matInput type="tel" [(ngModel)]="servicio.correo" placeholder="Ej. Asescom@gmail.com">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Contraseña</mat-label>
+
+          <mat-icon matPrefix>lock</mat-icon>
+
+          <input matInput type="password" [(ngModel)]="servicio.pass" placeholder="Ingresa tu contraseña">
+
+        </mat-form-field>
+
+      </div>
+
+    </div>
+
+    <!-- DATOS DEL EQUIPO -->
+    <div class="section">
+
+      <div class="section-title">
+        <mat-icon>devices</mat-icon>
+        <span>DATOS DEL EQUIPO</span>
+      </div>
+
+      <div class="form-grid">
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Tipo</mat-label>
+
+
+          <input matInput [(ngModel)]="servicio.tipo" placeholder="">
+
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+
+          <mat-label>Marca</mat-label>
+
+          <mat-icon matPrefix>laptop</mat-icon>
+
+          <input matInput [(ngModel)]="servicio.marca" placeholder="Ej. HP">
+
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Modelo</mat-label>
+
+          <input matInput [(ngModel)]="servicio.modelo" placeholder="Ej. Pavilion 15">
+
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Número de serie</mat-label>
+
+          <input matInput [(ngModel)]="servicio.serie" placeholder="Número de serie">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Cables</mat-label>
+
+          <input matInput [(ngModel)]="servicio.cables" placeholder="">
+
+        </mat-form-field>
+
+
+      </div>
+
+    </div>
+
+    <!-- FALLA REPORTADA -->
+    <div class="checkbox-section">
+      <div class="section-title">
+        <mat-icon>report_problem</mat-icon>
+        <span>FALLA REPORTADA</span>
+      </div>
+      <!-- EQUIPOS DE CÓMPUTO -->
+      <div class="checkbox-group">
+
+        <h3>
+          💻 Equipos de cómputo
+        </h3>
+
+        <div class="checkbox-grid">
+
+          <mat-checkbox [(ngModel)]="servicio.noenciende">
+            NO ENCIENDE
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.bloqueo">
+            BLOQUEO O LENTITUD
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.reinicia">
+            SE REINICIA
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.problemasvirus">
+            PROBLEMAS DE VIRUS
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.sinsenial">
+            SIN SEÑAL DE VIDEO O PANTALLA DAÑADA
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.teclado">
+            TECLADO DAÑADO
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.problemashardware">
+            PROBLEMAS DE HARDWARE
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.problemassoftware">
+            PROBLEMAS DE SOFTWARE
+          </mat-checkbox>
+
+        </div>
+
+      </div>
+
+
+      <!-- IMPRESORAS -->
+      <div class="checkbox-group impresoras">
+
+        <h3>
+          🖨️ Impresoras
+        </h3>
+
+        <div class="checkbox-grid">
+
+          <mat-checkbox [(ngModel)]="servicio.nojalas">
+            NO JALA LAS HOJAS
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.jalamas">
+            JALA MÁS DE UNA HOJA
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.imprimemancha">
+            IMPRIME CON MANCHAS
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.noimprime">
+            NO IMPRIME
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.noenciendeimpresora">
+            NO ENCIENDE
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.arrugaoatora">
+            ARRUGA / ATORA LAS HOJAS
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.errorenelpanel">
+            ERROR EN EL PANEL DE CONTROL
+          </mat-checkbox>
+
+          <mat-checkbox [(ngModel)]="servicio.problemasdecartuchos">
+            PROBLEMAS DE CARTUCHOS / TONER
+          </mat-checkbox>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- OTROS -->
+    <div class="otros-section">
+
+      <h3>Otros</h3>
+
+      <mat-form-field appearance="outline" class="otros-input">
+
+        <mat-label>Otros (describa)</mat-label>
+
+        <input matInput [(ngModel)]="servicio.otros" placeholder="Describa la falla o problema">
+
+      </mat-form-field>
+
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="checkbox-section">
+
+      <div class="section-title">
+        <mat-icon>build</mat-icon>
+        <span>SERVICIOS</span>
+      </div>
+
+      <div class="checkbox-grid">
+
+        <mat-checkbox [(ngModel)]="servicio.mantenimiento">
+          MANTENIMIENTO PREVENTIVO/CORRECTIVO
+        </mat-checkbox>
+
+        <mat-checkbox [(ngModel)]="servicio.restauracion">
+          RESTAURACION DE SISTEMA OPERATIVO
+        </mat-checkbox>
+
+        <mat-checkbox [(ngModel)]="servicio.instalacion">
+          INSTALACION/ACTUALIZACION DE PROGRAMAS
+        </mat-checkbox>
+
+        <mat-checkbox [(ngModel)]="servicio.instalacionvirus">
+          INSTALACION DE ANTIVIRUS
+        </mat-checkbox>
+
+        <mat-checkbox [(ngModel)]="servicio.respaldo">
+          RESPALDO DE INFORMACIÓN
+        </mat-checkbox>
+
+      </div>
+
+    </div>
+
+    <!-- OTROS -->
+    <div class="otros-section">
+
+      <h3>Otros</h3>
+
+      <mat-form-field appearance="outline" class="otros-input">
+
+        <mat-label>Otros (describa)</mat-label>
+
+        <input matInput [(ngModel)]="servicio.otrosservicios" placeholder="Describa la falla o problema">
+
+      </mat-form-field>
+
+    </div>
+    <br>
+    <!-- DIAGNOSTICO -->
+    <div class="section">
+
+      <div class="section-title">
+        <mat-icon>description</mat-icon>
+        <span>DIAGNOSTICO</span>
+      </div>
+
+
+      <mat-form-field appearance="outline" class="full-width">
+
+        <mat-label>Diagnostico</mat-label>
+
+        <textarea matInput rows="4" [(ngModel)]="servicio.diagnosticos"
+          placeholder="Describe el problema o trabajo a realizar...">
+        </textarea>
+
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOTONES -->
+  <mat-dialog-actions class="dialog-actions">
+
+    <button mat-stroked-button class="btn-cancelar" type="button" (click)="cancelar()">
+
+      <mat-icon>close</mat-icon>
+      Cancelar
+
+    </button>
+
+    <button mat-raised-button class="btn-guardar" type="button" (click)="guardar()">
+
+      <mat-icon>
+        {{ guardando ? 'hourglass_empty' : (modoEdicion ? 'save' : 'check') }}
+      </mat-icon>
+
+      {{
+      guardando
+      ? (modoEdicion ? 'Modificando...' : 'Guardando...')
+      : (modoEdicion ? 'Guardar cambios' : 'Guardar')
+      }}
+
+    </button>
+
+  </mat-dialog-actions>
+
+</div>

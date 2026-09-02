@@ -1,0 +1,156 @@
+<div class="hoja-container">
+
+  <!-- ENCABEZADO -->
+  <div class="page-header">
+
+    <div class="page-title">
+      <h1>Hoja de Servicios</h1>
+      <p>Administra y consulta las hojas de servicios</p>
+    </div>
+
+    <button class="btn-nuevo" (click)="nuevoServicio()">
+      <span class="plus">+</span>
+      <span>Nuevo servicio</span>
+    </button>
+
+  </div>
+
+
+  <!-- TARJETA DE TABLA -->
+  <div class="table-card">
+
+    <!-- CABECERA DE LA TABLA -->
+    <div class="table-header">
+
+      <div>
+        <h2>Servicios registrados</h2>
+        <p>Consulta, modifica, elimina o exporta los registros.</p>
+      </div>
+
+    </div>
+
+
+    <!-- TABLA -->
+    <div class="table-container">
+
+      <table class="tabla-servicios">
+
+        <thead>
+          <tr>
+
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Contraseña</th>
+            <th>Fecha</th>
+
+            <th class="th-acciones">
+              Acciones
+            </th>
+
+          </tr>
+        </thead>
+
+
+        <tbody>
+
+          <!-- REGISTROS -->
+          <tr *ngFor="let cliente of servicios">
+
+            <td class="id-columna">
+              {{ cliente.idservicio }}
+            </td>
+
+            <td class="nombre-columna">
+              <div class="cliente-info">
+                <span>
+                  {{ cliente.nombre }}
+                </span>
+              </div>
+            </td>
+
+            <td>
+              {{ cliente.telefono }}
+            </td>
+
+            <td>
+              {{ cliente.correo }}
+            </td>
+
+            <td>
+              <span class="password">
+                {{ cliente.pass }}
+              </span>
+            </td>
+            <td>
+              <span class="fecha">
+                {{ cliente.fecha | date:'dd/MM/yyyy' }}
+              </span>
+            </td>
+
+
+            <!-- ACCIONES -->
+            <td>
+
+              <div class="acciones">
+
+                <!-- MODIFICAR -->
+                <button class="btn-accion btn-editar" (click)="modificarServicio(cliente)" title="Modificar">
+
+                  ✏️
+
+                </button>
+
+
+                <!-- ELIMINAR -->
+                <button class="btn-accion btn-eliminar" (click)="eliminarServicio(cliente.idservicio)" title="Eliminar">
+
+                  🗑️
+
+                </button>
+
+
+                <!-- PDF -->
+                <button class="btn-accion btn-pdf-row" [class.seleccionado]="servicioSeleccionado === cliente.idservicio"
+                  (click)="exportarPDF(cliente)" title="Exportar PDF">
+
+                  📄
+
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+
+          <!-- SIN DATOS -->
+          <tr *ngIf="servicios.length === 0">
+
+            <td colspan="7" class="sin-datos">
+
+              <div class="sin-datos-icon">
+                📋
+              </div>
+
+              <strong>No hay servicios registrados</strong>
+
+              <p>
+                Cuando agregues un servicio aparecerá aquí.
+              </p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
