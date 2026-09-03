@@ -9,7 +9,7 @@ export class DatosClientesServices {
    private http = inject(HttpClient);
 
   private apiUrl =
-    'https://api.asescomp.com/api/DatosClientesMaster';
+    'https://asescomp26.netlify.app/api/DatosClientesMaster';
 
   obtenerClientes(): Observable<any[]> {
 
