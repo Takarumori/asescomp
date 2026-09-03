@@ -7,7 +7,7 @@ import { Component, inject, Injectable } from '@angular/core';
 export class Services {
    private http = inject(HttpClient);
 
-  private apiUrl = 'https://api.asescomp.com/api/LoginsMaster/login';
+  private apiUrl = 'https://asescomp.netifly.app/api/LoginsMaster/login';
 
   login(nombre: string, pass: string) {
 
