@@ -10,7 +10,7 @@ export class NuevosServicios {
   private http = inject(HttpClient);
 
   private apiUrl =
-    'https://asescomp26.netlify.app/api/NuevossServiciosMaster';
+    'https://api.asescomp26.com/api/NuevossServiciosMaster';
 
   obtenerClientes(): Observable<any[]> {
 
