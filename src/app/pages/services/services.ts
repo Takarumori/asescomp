@@ -7,7 +7,7 @@ import { Component, inject, Injectable } from '@angular/core';
 export class Services {
    private http = inject(HttpClient);
 
-  private apiUrl = 'https://api.asescomp26.com/api/LoginsMaster/login';
+  private apiUrl = 'http://www.asescomp.somee.com/api/LoginsMaster/login';
 
   login(nombre: string, pass: string) {
 
