@@ -9,7 +9,7 @@ export class DatosClientesServices {
    private http = inject(HttpClient);
 
   private apiUrl =
-    'http://www.asescomp.somee.com/api/DatosClientesMaster';
+    'https://www.asescomp.somee.com/api/DatosClientesMaster';
 
   obtenerClientes(): Observable<any[]> {
 
