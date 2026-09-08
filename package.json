@@ -3,23 +3,27 @@
   "version": "0.0.0",
   "main": "electron/main.js",
   "build": {
-    "appId": "com.Takarumori.Asescomp",
-    "productName": "Asescomp",
-    "files": [
-      "dist/asescomp-app/**/*",
-      "electron/main.js"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    },
-    "mac": {
-      "target": "dmg"
-    },
-    "win": {
-      "target": "portable",
-      "icon": "assets/iconB.ico"
-    }
+  "appId": "com.Takarumori.Asescomp",
+  "productName": "Asescomp",
+
+  "directories": {
+    "buildResources": "assets"
   },
+
+  "files": [
+    "dist/asescomp-app/**/*",
+    "electron/main.js"
+  ],
+
+  "win": {
+    "target": [
+      {
+        "target": "portable"
+      }
+    ],
+    "icon": "assets/iconB.ico"
+  }
+},
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

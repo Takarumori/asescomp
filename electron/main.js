@@ -1,18 +1,24 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const fs = require('fs');
 
 function createWindow() {
 
-  const iconPath = app.isPackaged
-    ? path.join(process.resourcesPath, 'assets', 'iconB.ico')
-    : path.join(__dirname, '..', 'assets', 'iconB.ico');
+  const iconPath = path.join(
+    __dirname,
+    '..',
+    'assets',
+    'iconB.ico'
+  );
 
+  console.log('=================================');
   console.log('ICONO:', iconPath);
+  console.log('EXISTE:', fs.existsSync(iconPath));
+  console.log('=================================');
 
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
-
     icon: iconPath,
 
     webPreferences: {
