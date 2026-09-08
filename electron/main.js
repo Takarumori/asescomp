@@ -2,12 +2,19 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
 function createWindow() {
+
+  const iconPath = app.isPackaged
+    ? path.join(process.resourcesPath, 'assets', 'iconB.ico')
+    : path.join(__dirname, '..', 'assets', 'iconB.ico');
+
+  console.log('ICONO:', iconPath);
+
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
-    // ICONO DE LA VENTANA
-    icon: path.join(__dirname, '..', 'assets', 'iconB.ico'),
-    alwaysOnTop: true,
+
+    icon: iconPath,
+
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true
