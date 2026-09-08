@@ -5,7 +5,6 @@
   "build": {
     "appId": "com.Takarumori.Asescomp",
     "productName": "Asescomp",
-    "icon": "assets/iconA.ico",
     "files": [
       "dist/asescomp-app/**/*",
       "electron/main.js"
@@ -17,7 +16,8 @@
       "target": "dmg"
     },
     "win": {
-      "target": "portable"
+      "target": "portable",
+      "icon": "assets/iconB.ico"
     }
   },
   "scripts": {
